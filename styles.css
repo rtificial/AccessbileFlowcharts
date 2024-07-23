@@ -1,4 +1,4 @@
-* {margin: 0; padding: 0;}
+* { margin: 0; padding: 0; }
 
 .tree ul {
     padding-top: 20px; 
@@ -19,14 +19,14 @@
     -moz-transition: all 0.5s;
 }
 
-/* We will use ::before and ::after to draw the connectors */
+/* Draw the connectors */
 
 .tree li::before, .tree li::after {
     content: '';
     position: absolute; 
     top: 0; 
     right: 50%;
-    border-top: 1px solid #ccc;
+    border-top: 2px solid #ccc;
     width: 50%; 
     height: 20px;
 }
@@ -34,18 +34,16 @@
 .tree li::after {
     right: auto; 
     left: 50%;
-    border-left: 1px solid #ccc;
+    border-left: 2px solid #ccc;
 }
 
-/* We need to remove left-right connectors from elements without any siblings */
+/* Remove left-right connectors from elements without any siblings */
 .tree li:only-child::after, .tree li:only-child::before {
     display: none;
 }
 
 /* Remove space from the top of single children */
-.tree li:only-child { 
-    padding-top: 0;
-}
+.tree li:only-child { padding-top: 0; }
 
 /* Remove left connector from first child and right connector from last child */
 .tree li:first-child::before, .tree li:last-child::after {
@@ -54,7 +52,7 @@
 
 /* Adding back the vertical connector to the last nodes */
 .tree li:last-child::before {
-    border-right: 1px solid #ccc;
+    border-right: 2px solid #ccc;
     border-radius: 0 5px 0 0;
     -webkit-border-radius: 0 5px 0 0;
     -moz-border-radius: 0 5px 0 0;
@@ -66,24 +64,24 @@
     -moz-border-radius: 5px 0 0 0;
 }
 
-/* Time to add downward connectors from parents */
+/* Add downward connectors from parents */
 .tree ul ul::before {
     content: '';
     position: absolute; 
     top: 0; 
     left: 50%;
-    border-left: 1px solid #ccc;
+    border-left: 2px solid #ccc;
     width: 0; 
     height: 20px;
 }
 
 .tree li a {
-    border: 1px solid #ccc;
-    padding: 5px 10px;
+    border: 2px solid #ccc;
+    padding: 10px 20px;
     text-decoration: none;
-    color: #666;
-    font-family: arial, verdana, tahoma;
-    font-size: 11px;
+    color: #fff;
+    font-family: Arial, Verdana, Tahoma;
+    font-size: 14px;
     display: inline-block;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -93,12 +91,11 @@
     -moz-transition: all 0.5s;
 }
 
-/* Time for some hover effects */
-/* We will apply the hover effect to the lineage of the element also */
+/* Hover effects for the lineage */
 .tree li a:hover, .tree li a:hover+ul li a {
     background: #c8e4f8; 
     color: #000; 
-    border: 1px solid #94a0b4;
+    border: 2px solid #94a0b4;
 }
 
 /* Connector styles on hover */
@@ -112,7 +109,6 @@
 /* Customizing node colors */
 .tree li a {
     background-color: #4CAF50; /* Default background color */
-    color: #fff;
 }
 
 .tree li a[href$='Approval?'] {
@@ -123,8 +119,14 @@
     background-color: #ff9800; /* Orange for Redesign */
 }
 
-.tree li a[href$='Testing'], 
-.tree li a[href$='Deployment'], 
+.tree li a[href$='Testing'] {
+    background-color: #2196F3; /* Blue for Testing */
+}
+
+.tree li a[href$='Deployment'] {
+    background-color: #9c27b0; /* Purple for Deployment */
+}
+
 .tree li a[href$='Maintenance'] {
-    background-color: #4CAF50; /* Same color for Testing, Deployment, Maintenance */
+    background-color: #795548; /* Brown for Maintenance */
 }
