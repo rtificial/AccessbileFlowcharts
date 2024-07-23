@@ -11,8 +11,10 @@ body {
     margin-top: 20px;
 }
 
-.flowchart.vertical .arrow {
-    font-size: 24px;
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 10px 0;
 }
 
@@ -20,32 +22,26 @@ body {
     border: 2px solid #000;
     border-radius: 10px;
     padding: 20px;
-    width: 250px;
+    width: 200px;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 10px;
     color: #fff;
+    background-color: #4CAF50; /* Default background color */
 }
 
-.planning {
-    background-color: #4CAF50; /* Green */
-}
-
-.design {
-    background-color: #2196F3; /* Blue */
-}
-
-.development {
+.node.decision {
     background-color: #f44336; /* Red */
 }
 
-.testing {
+.node.redesign {
     background-color: #ff9800; /* Orange */
 }
 
-.deployment {
-    background-color: #9c27b0; /* Purple */
+.arrow {
+    font-size: 24px;
+    margin: 0 10px;
 }
 
-.maintenance {
-    background-color: #795548; /* Brown */
+.arrow.vertical {
+    transform: rotate(90deg);
 }

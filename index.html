@@ -3,42 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessible Flowchart</title>
+    <title>Complex Accessible Flowchart</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div role="diagram" aria-labelledby="flowchart-title" aria-describedby="flowchart-desc">
         <h2 id="flowchart-title">Project Development Flowchart</h2>
-        <p id="flowchart-desc">This flowchart illustrates the main steps in the project development process.</p>
-        <div class="flowchart vertical">
-            <div class="node planning" role="region" aria-labelledby="node1-title">
-                <h3 id="node1-title">Planning</h3>
-                <p>Define project scope and objectives</p>
+        <p id="flowchart-desc">This flowchart illustrates the main steps in the project development process, including decision points and multiple paths.</p>
+        <div class="flowchart">
+            <div class="row">
+                <div class="node planning" role="region" aria-labelledby="node1-title">
+                    <h3 id="node1-title">Planning</h3>
+                    <p>Define project scope and objectives</p>
+                </div>
+                <div class="arrow horizontal" aria-hidden="true">→</div>
+                <div class="node design" role="region" aria-labelledby="node2-title">
+                    <h3 id="node2-title">Design</h3>
+                    <p>Create design specifications</p>
+                </div>
+                <div class="arrow horizontal" aria-hidden="true">→</div>
+                <div class="node decision" role="region" aria-labelledby="node3-title">
+                    <h3 id="node3-title">Approval?</h3>
+                    <p>Design approved?</p>
+                </div>
             </div>
-            <div class="arrow" aria-hidden="true">↓</div>
-            <div class="node design" role="region" aria-labelledby="node2-title">
-                <h3 id="node2-title">Design</h3>
-                <p>Create design specifications</p>
+            <div class="row">
+                <div class="arrow vertical" aria-hidden="true">↓</div>
+                <div class="node development" role="region" aria-labelledby="node4-title">
+                    <h3 id="node4-title">Development</h3>
+                    <p>Build the project according to specifications</p>
+                </div>
             </div>
-            <div class="arrow" aria-hidden="true">↓</div>
-            <div class="node development" role="region" aria-labelledby="node3-title">
-                <h3 id="node3-title">Development</h3>
-                <p>Build the project according to specifications</p>
+            <div class="row">
+                <div class="arrow horizontal" aria-hidden="true">→</div>
+                <div class="node testing" role="region" aria-labelledby="node5-title">
+                    <h3 id="node5-title">Testing</h3>
+                    <p>Test the project and fix bugs</p>
+                </div>
             </div>
-            <div class="arrow" aria-hidden="true">↓</div>
-            <div class="node testing" role="region" aria-labelledby="node4-title">
-                <h3 id="node4-title">Testing</h3>
-                <p>Test the project and fix bugs</p>
+            <div class="row">
+                <div class="arrow vertical" aria-hidden="true">↓</div>
+                <div class="node deployment" role="region" aria-labelledby="node6-title">
+                    <h3 id="node6-title">Deployment</h3>
+                    <p>Deploy the project to production</p>
+                </div>
+                <div class="arrow horizontal" aria-hidden="true">→</div>
+                <div class="node maintenance" role="region" aria-labelledby="node7-title">
+                    <h3 id="node7-title">Maintenance</h3>
+                    <p>Maintain and update the project</p>
+                </div>
             </div>
-            <div class="arrow" aria-hidden="true">↓</div>
-            <div class="node deployment" role="region" aria-labelledby="node5-title">
-                <h3 id="node5-title">Deployment</h3>
-                <p>Deploy the project to production</p>
-            </div>
-            <div class="arrow" aria-hidden="true">↓</div>
-            <div class="node maintenance" role="region" aria-labelledby="node6-title">
-                <h3 id="node6-title">Maintenance</h3>
-                <p>Maintain and update the project</p>
+            <div class="row">
+                <div class="arrow horizontal" aria-hidden="true">←</div>
+                <div class="node redesign" role="region" aria-labelledby="node8-title">
+                    <h3 id="node8-title">Redesign</h3>
+                    <p>Rework the design based on feedback</p>
+                </div>
             </div>
         </div>
     </div>
